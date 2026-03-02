@@ -1,0 +1,84 @@
+.contenedor{
+  max-width: 1100px; /* Ancho máximo del contenedor*/ 
+  margin: 0 auto; /* Centra contenedor horizontalmente (auto en izquierda y derecha).*/
+  padding: 1rem; /*separa el contenido de los bordes del contenedor.*/
+}
+
+header, nav, footer{
+  width: 100%; /*Hace que ocupen todo el ancho disponible del contenedor*/
+  text-align: center; /* centra los elementos*/
+}
+
+.menu ul{
+  list-style: none; /* quita las viñetas */
+  justify-content: center; /* centra los enlaces */
+  padding: 0; /*quita la sangría */
+  margin: 0 0 1rem 0; /* separa el nav del contenido */
+  display: flex;   /* esto lo vuelve horizontal */
+  gap: 2.5rem; /* espacio entre enlaces */
+}
+
+.menu a{
+  padding: 0.25rem 0.5rem; /* espacio alrededor del texto */
+}
+
+.contenido{
+  display: flex; /*coloca elementos hijos en una fila (row) por defecto*/
+  gap: 1.5rem; /*espacio entre los elementos (main y aside)*/
+  align-items: flex-start;  /* alinea los elementos arriba (main y aside) */
+}
+
+/* seccion aside */
+.destacado{
+  width: 280px;        /* ancho fijo del aside */
+  flex: 0 0 280px;     /* no crece ni se encoge: se mantiene en 280px */
+  text-align: center;  /* centra títulos y figcaption dentro del aside */
+}
+
+.destacado p,.destacado .lista-destacado{
+  text-align: left;    /* evita que párrafos y lista queden centrados */
+}
+
+.lista-destacado{
+  margin-top: .75rem;   /* separa la lista del párrafo anterior */
+  padding-left: 1.25rem;/* sangría de la lista */
+}
+
+.destacado img{
+  display: block;      /* la imagen se comporta como bloque */
+  margin: 0 auto;      /* centra la imagen */
+  max-width: 200px;    /* limita el tamaño en el aside */
+  height: auto;        /* mantiene proporción */
+}
+
+.inicio{
+  flex: 1; /* el main ocupa el espacio disponible */
+  min-width: 0; /* evita desbordes */
+
+}
+
+.hero{
+  text-align: center; /* centra el h2 y el contenido del hero */
+}
+
+img{
+  max-width: 100%; /* Hace que la imagen nunca supere el ancho de su contenedor */
+  height: auto;   /* Hace que la imagen mantenga la proporción*/
+  display: block;  /* Evita espacio inferior de imágenes inline */
+}
+
+footer{
+  margin-top: 1.5rem; /* Separa el footer del contenido de arriba */
+}
+
+/* Responsive: cuando la pantalla es estrecha (móvil/tablet) */
+@media (max-width: 900px){
+  .contenido{
+    flex-direction: column; /* Cambia de dos columnas a una sola columna (apilado) */
+  }
+
+  .destacado{
+    width: 100%; /* El aside pasa a ocupar todo el ancho */
+    flex: 1;     /* Permite que se comporte como bloque normal */
+  }
+}
